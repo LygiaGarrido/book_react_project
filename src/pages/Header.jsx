@@ -1,4 +1,8 @@
-function Header() {  
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { HeroSection } from "./HeroSection";
+
+function Header() {
   return (
     <>
       <header className="header">
@@ -24,19 +28,16 @@ function Header() {
 
           <li className="nav-elem">
             <button className="nav-btn signup-btn">
-              <a href="" className="nav-link signup-btn">
-                Sign up
-              </a>
+              <Link to="/sign-up" className="nav-link signup-btn">Sign up</Link>
+              
             </button>
           </li>
         </ol>
       </header>
-        <div className="division"></div>
+      <div className="division"></div>
+      <HeroSection/>
     </>
   );
 }
-
-
-
 
 export { Header };
