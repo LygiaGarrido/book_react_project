@@ -1,0 +1,151 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #eeeeee;
+    font-family: 'Mukta', sans-serif;
+}
+
+#app{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap:2px
+}
+
+/* HEADER STYLES */
+
+.header {
+    grid-column: 1/ -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 25px;
+    margin: 12px;
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 32px;
+    color:#76323f;
+ 
+  }
+
+  .logo{
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin-right: 10px;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 24px;
+  }
+
+  .nav-elem{
+    margin: 5px;
+    padding: 15px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color:#76323f;
+}
+
+.nav-btn,
+.hero-section-btn{
+    background-color: #D7CEC7;
+    border: none;
+    border-radius: 9px;
+    font-size: 18px;
+    box-shadow: 1px 1px 3px #76323F;
+}
+
+.nav-btn:hover,
+.hero-section-btn:hover{
+    box-shadow: 2px 3px 3px #565656;
+
+}
+
+.login-btn{
+    padding: 10px;
+}
+
+
+.signup-btn,
+.hero-section-btn{
+   color: #D7CEC7;
+   background-color: #76323F;
+   padding:20px 15px 20px;
+
+}
+
+.division{
+    grid-column: 1/ -1;
+    height: 1px;
+    background-color: #C09F80;
+   
+}
+
+
+/* HERO SECTION */
+
+.hero-section{
+    grid-column: 1/ -1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* flex-direction: column; */
+    height: 75vh;
+    background-image: url("../src/hero-img1.png");
+    background-size: cover;
+}
+
+.hero-section-text-top{
+    color: #343434;
+   
+    /* width: 50%; */
+    text-align: center;
+    font-size: 45px;
+    align-self: flex-start;
+    margin-top: 5%;
+    margin-left: 5%;
+
+}
+
+.hero-section-text-bottom{
+    color: #343434;
+    /* width: 50%; */
+    font-size: 35px;
+    text-align: center;
+    align-self: flex-start;
+    margin-top: 5%;
+    margin-left: 5%;
+
+}
+
+.hero-section-btn{
+    width:30%;
+    padding:20px 45px 20px;
+    align-self: center;
+    margin-bottom: 5%;
+    margin-right: 5%;
+}
+
+
+/* SIGN UP PAGE */
+
+.signup-container{
+    grid-column: 3/10;
+    border: 1px solid #76323f;
+    margin-top: 30%;
+}
+
+.signup-form{
+    grid-column: 4/7;
+    padding:30%;
+    width: 30%;
+
+}
