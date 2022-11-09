@@ -3,17 +3,34 @@ import { useNavigate } from "react-router-dom";
 function LoginPage() {
     const navigate = useNavigate();
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
 
-        const form = e.target;
-        const userInput = form.username;
-        const passwordInput = form.password;
+    
+        const response = await fetch(
+            'https://ancient-temple-61124.herokuapp.com/api/auth/login',
+            {
+                method: 'post',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: e.target.username.value,
+                    password: e.target.password.value,
 
-        localStorage.setItem("current-user", userInput.value);
-        localStorage.setItem("current-password", passwordInput.value);
+                }),
+            }
+        );
 
-        navigate(`/profile/${userInput.value}`);
+        const text = await response.text();
+        const obj = JSON.parse(text)
+        if(obj.status === true){
+            navigate(`/profile/${obj.data.id}`);
+        }
+      
+        console.log(text);
+    
     }
 
     return (
@@ -27,7 +44,7 @@ function LoginPage() {
                         <label> E-mail:</label>
                         <input type="text" name="username" required/>
                     </div>
-                    <div class="card-content-area">
+                    <div className="card-content-area">
                         <label> Password:</label>
                         <input type="password" name="password" required/>
                     </div>   

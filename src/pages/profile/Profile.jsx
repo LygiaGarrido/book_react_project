@@ -4,6 +4,7 @@ import logo from "./profile.jpg";
 
 
 function Profile() {
+  
   const { username } = useParams();
 
   if (username !== localStorage.getItem("current-user")) {
