@@ -4,6 +4,7 @@ import { Header } from '../components/Header';
 import { HeroSection } from '../components/HeroSection';
 import { Footer } from '../components/Footer';
 import { BookSlider } from '../components/bookSlider';
+import Carousel from '../components/Carousel';
 
 function HomePage() {
     const [books, setBooks] = useState([]);
@@ -40,6 +41,10 @@ function HomePage() {
             <div className='book-list-div'>
                 <h3 className='book-container-title'>The week's best books</h3>
                 {bookList[currentBook]}
+            </div>
+            <div className='book-list-div'>
+            <h3 className='book-container-title'>People from all over the world are reading these...</h3>
+            <Carousel />
             </div>
             <Footer />
         </>

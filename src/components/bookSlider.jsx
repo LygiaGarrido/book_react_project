@@ -4,12 +4,13 @@ import styled from 'styled-components';
 const Highlight_book = styled.div`
     display: flex;
     justify-content: center;
-    margin-left: 198px;
-    margin-right: 124px;
+    margin-left: 20%;
+    margin-right: 20%;
     font-size: 30px;
     color: #343434;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
+    margin-top: 15px;
 `;
 
 const Book_description = styled.div`
