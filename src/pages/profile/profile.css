@@ -1,0 +1,75 @@
+body{
+
+    font-family: Ek Mukta;
+
+    background-color: #D7CEC7;
+
+}
+
+button{
+    
+    background-color: #76323F;
+    
+    color: white;
+    
+    width: 250px;
+    
+    height:30px;
+    
+    border: none;
+    
+    border-radius: 4px;
+    
+    margin: 10px;
+    
+}
+
+.profile{
+
+    color:#76323F;
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content:space-evenly;
+    
+    font-size: 30px;
+
+}
+.button{
+
+    margin-top: 80px;
+
+    padding: 7px;
+
+    cursor: pointer;
+
+    text-align: center;
+
+}
+scan{
+    
+    margin: 50px auto;
+
+    background-color: rgba(146, 142, 142, 0.3);
+
+    width: 450px
+    
+}
+.Edit{
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content:center ;
+
+    color: #76323F;
+
+}
+.editButton button{
+    margin-left: 340px;
+    
+    width: 120px
+}
