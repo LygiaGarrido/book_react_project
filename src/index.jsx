@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+import { BookPage } from './pages/bookPage/BookPage';
 import { SignUp } from './pages/SignUp';
 import { LoginPage } from './pages/loginPage';
 import { HomePage } from './pages/HomePage';
@@ -43,6 +43,15 @@ function App() {
                         path='mybooks'
                         element={<MyBooks />}
                     ></Route>
+                    <Route
+                    path="book"
+                    element={<BookPage/>}>
+                        <Route
+                            path={':id'}
+                            element={<BookPage />}
+                        />
+                    </Route>
+                
                 </Routes>
             </UserContext.Provider>
         </BrowserRouter>

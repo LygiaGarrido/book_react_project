@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { useNavigate } from "react-router-dom"
 const Book_to_grid = styled.div`
     display: flex;
     margin-top: 15px;
@@ -12,8 +12,12 @@ const Book_to_grid = styled.div`
 `;
 
 function BookGrid(props) {
+    const navigate = useNavigate();
+
     function handleClick() {
-        console.log(props.bookID);
+       
+        navigate(`/book/${props.bookID}`)
+        
     }
 
     return (
