@@ -35,7 +35,7 @@ function Header() {
         </ol>
       </header>
       <div className="division"></div>
-      <HeroSection/>
+    
     </>
   );
 }

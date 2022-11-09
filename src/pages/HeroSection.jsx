@@ -1,4 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
+
 function HeroSection() {
+  const navigate = useNavigate();
+
+  function handleClick(){
+    navigate("/sign-up")
+
+  }
+  
   return (
     <>
       <section className="hero-section">
@@ -14,7 +24,7 @@ function HeroSection() {
           </h1>
         </div>
 
-        <button className="hero-section-btn">Start Reading Now!</button>
+        <button className="hero-section-btn" onClick={handleClick}>Start Reading Now!</button>
       </section>
     </>
   );

@@ -1,3 +1,5 @@
+import { Header } from "./Header";
+
 function SignUp() {
   async function handleSubmit(e) {
     e.preventDefault();
@@ -25,8 +27,9 @@ function SignUp() {
 
   return (
     <>
+    <Header/>
       <div className="signup-container">
-        <h2 className="signup=-title">Welcome to our new favorite website!</h2>
+        <h2 className="signup-title">Welcome to your new favorite website!</h2>
         <form onSubmit={handleSubmit} className="signup-form">
           <label>Name</label>
           <input type="text" name="name" />
@@ -36,7 +39,7 @@ function SignUp() {
           <input type="password" name="password" />
           <label>Profile Picture</label>
           <input type="url" name="profile_picture" />
-          <button type="submit">Sign up</button>
+          <button type="submit" className="signup-form-btn">Sign up</button>
         </form>
       </div>
     </>
