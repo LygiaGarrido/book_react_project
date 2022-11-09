@@ -1,12 +1,11 @@
 
 import React, { useEffect, useState, useRef } from "react";
-import { createRoot } from "react-dom/client";
-import './styles.css';
 
-const domContainer = document.getElementById("app");
-const root = createRoot(domContainer);
+import './carousel.css';
 
-function Carousel() {
+
+
+export default function Carousel() {
 
   const [books, setBooks] = useState([]);
    
@@ -68,7 +67,3 @@ function Carousel() {
     </div>
   );
 }
-
-root.render(
-    <Carousel />
- )
