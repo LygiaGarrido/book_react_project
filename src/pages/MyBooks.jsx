@@ -3,10 +3,23 @@ import { BookGrid } from '../components/BookGrid';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { UserContext } from '../contexts/UserContext';
+import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+
+const Grid_my_books = styled.div`
+    display: grid;
+    margin-top: 5%;
+    grid-column: 1/ -1;
+    grid-template-columns: auto auto auto;
+    row-gap: 30px;
+    column-gap: 10px;
+    justify-content: space-evenly;
+`;
 
 function MyBooks() {
     const [books, setBooks] = useState([]);
     const { user } = useContext(UserContext);
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function getAllBooks() {
@@ -19,6 +32,11 @@ function MyBooks() {
 
         getAllBooks();
     }, []);
+
+    if (user === null) {
+        navigate('/login');
+        return;
+    }
 
     const gridBooks = books
         .filter((book) => book.user.id === +user.id)
@@ -36,7 +54,7 @@ function MyBooks() {
     return (
         <>
             <Header />
-            {gridBooks}
+            <Grid_my_books>{gridBooks}</Grid_my_books>
             <Footer />
         </>
     );
