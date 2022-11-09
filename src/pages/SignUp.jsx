@@ -1,6 +1,9 @@
+import { useContext } from 'react';
 import { Header } from '../components/Header';
+import { UserContext } from '../contexts/UserContext';
 
 function SignUp() {
+    const { user, setUser } = useContext(UserContext);
     async function handleSubmit(e) {
         e.preventDefault();
 
@@ -22,7 +25,12 @@ function SignUp() {
         );
 
         const text = await response.text();
-        console.log(text);
+        const obj = JSON.parse(text);
+        if (obj.status) {
+            setUser(obj.data);
+        }
+
+        //TODO ERROR MESSAGE
     }
 
     return (
