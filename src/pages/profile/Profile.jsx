@@ -28,12 +28,17 @@ function ProfilePage() {
 }
 function UpperPage() {
     const { user, setUser } = useContext(UserContext);
+    
+     if(user.profile_picture === null){
+            user.profile_picure = {logo};
+        
+    }
     return (
         <>
             <div className='profile'>
                 <img
                     id='logo'
-                    src={logo}
+                    src={user.profile_picture}
                 />
                 <h2> {user.name} </h2>
             </div>
