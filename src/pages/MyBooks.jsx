@@ -54,6 +54,12 @@ function MyBooks() {
     return (
         <>
             <Header />
+            <button
+                className='add-book-btn'
+                onClick={() => navigate('/new_book')}
+            >
+                Add Book
+            </button>
             <Grid_my_books>{gridBooks}</Grid_my_books>
             <Footer />
         </>

@@ -45,18 +45,18 @@ function App() {
                         element={<MyBooks />}
                     ></Route>
                     <Route
-                    path="book"
-                    element={<BookPage/>}>
+                        path='book'
+                        element={<BookPage />}
+                    >
                         <Route
                             path={':id'}
                             element={<BookPage />}
                         />
                     </Route>
                     <Route
-                    path="new_book"
-                    element={<PostBookPage />}>
-                    </Route>
-                
+                        path='new_book'
+                        element={<PostBookPage />}
+                    ></Route>
                 </Routes>
             </UserContext.Provider>
         </BrowserRouter>
