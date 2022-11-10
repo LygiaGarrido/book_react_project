@@ -1,9 +1,11 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Header } from '../components/Header';
 import { UserContext } from '../contexts/UserContext';
 
 function SignUp() {
     const { user, setUser } = useContext(UserContext);
+    const navigate = useNavigate();
     async function handleSubmit(e) {
         e.preventDefault();
 
@@ -30,7 +32,7 @@ function SignUp() {
             setUser(obj.data);
         }
 
-        //TODO ERROR MESSAGE
+        navigate('/');
     }
 
     return (

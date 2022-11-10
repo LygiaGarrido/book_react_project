@@ -28,10 +28,9 @@ function ProfilePage() {
 }
 function UpperPage() {
     const { user, setUser } = useContext(UserContext);
-    
-     if(user.profile_picture === null){
-            user.profile_picure = {logo};
-        
+
+    if (user.profile_picture === null) {
+        user.profile_picture = { logo };
     }
     return (
         <>
