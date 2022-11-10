@@ -76,7 +76,8 @@ body {
 
 .signup-btn,
 .hero-section-btn,
-.signup-form-btn {
+.signup-form-btn,
+.add-book-btn {
     color: #d7cec7;
     background-color: #76323f;
     padding: 20px 15px 20px;
@@ -174,7 +175,8 @@ body {
     color: #343434;
 }
 
-.signup-form-btn {
+.signup-form-btn,
+.add-book-btn {
     border: none;
     border-radius: 9px;
     padding: 10px 10px 10px;
@@ -364,4 +366,10 @@ scan h3 {
     border: none;
     border-radius: 9px;
     color: #d7cec7;
+}
+
+.add-book-btn {
+    margin-top: 25%;
+    grid-column: 2/4;
+    width: 70%;
 }

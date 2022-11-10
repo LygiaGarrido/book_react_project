@@ -39,7 +39,7 @@ function BookPage() {
         setShow(!show);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         const title = event.target.bookTitle.value;
@@ -47,11 +47,20 @@ function BookPage() {
         const description = event.target.description.value;
         const bookCover = event.target.bookCover.value;
 
-        UpdateABook(id, title, description, year, bookCover, user.token);
+        const bookID = await UpdateABook(
+            id,
+            title,
+            description,
+            year,
+            bookCover,
+            user.token
+        );
         event.target.bookTitle.value = '';
         event.target.bookYear.value = '';
         event.target.description.value = '';
         event.target.bookCover.value = '';
+        setShow(!show);
+        navigate('/mybooks');
     };
 
     const handleDelete = () => {
