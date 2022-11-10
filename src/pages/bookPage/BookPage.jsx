@@ -63,8 +63,8 @@ function BookPage() {
             <div className='bookPage'>
                 {show === false && (
                     <div className='bookInfo'>
-                        <div id='bookCover'>
-                            <img src={book.book_cover}></img>
+                        <div className='bookCover'>
+                            <img id="CoverOfBook" src={book.book_cover}></img>
                         </div>
                         <div id='bookDetails'>
                             <p>
@@ -78,13 +78,14 @@ function BookPage() {
                             </p>
                         </div>
                         <div id='editButton'>
-                            <button onClick={handleClick}>Edit</button>
+                            <button className="editBt" onClick={handleClick}>Edit</button>
                         </div>
                     </div>
                 )}
 
                 {show && (
                     <div className='editBook'>
+                      <img id="bookC" src={book.book_cover}></img>
                         <div id='updateForm'>
                             <form onSubmit={handleSubmit}>
                                 <label>Title</label>
@@ -124,17 +125,17 @@ function BookPage() {
                                 />
                                 <br />
                                 <br />
-                                <button type='submit'> Update book </button>
+                                <button className="editBt2" type='submit'> Update book </button>
                             </form>
                         </div>
                         <div className='editButtons'>
                             <div id='discardButton'>
-                                <button onClick={handleClick}>
+                                <button className="editBt2" onClick={handleClick}>
                                     Discard changes
                                 </button>
                             </div>
                             <div id='deleteButton'>
-                                <button onClick={handleDelete}>
+                                <button className="editBt2" onClick={handleDelete}>
                                     Delete book
                                 </button>
                             </div>
