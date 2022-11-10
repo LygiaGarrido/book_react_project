@@ -1,9 +1,16 @@
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../contexts/UserContext';
 import { HeroSection } from './HeroSection';
 
 function Header() {
     const navigate = useNavigate();
+    const { user } = useContext(UserContext);
+    let isLoggedIn = false;
+    if (user !== null) {
+        isLoggedIn = true;
+    }
     return (
         <>
             <header className='header'>
@@ -27,7 +34,20 @@ function Header() {
                         </a>
                     </li>
                     <li className='nav-elem'>
-                        <button className='nav-btn login-btn'>
+                        <a
+                            href='#'
+                            className='nav-link'
+                            onClick={() => navigate('/mybooks')}
+                            hidden={!isLoggedIn}
+                        >
+                            My books
+                        </a>
+                    </li>
+                    <li className='nav-elem'>
+                        <button
+                            className='nav-btn login-btn'
+                            hidden={isLoggedIn}
+                        >
                             <a
                                 href=''
                                 className='nav-link'
@@ -37,9 +57,11 @@ function Header() {
                             </a>
                         </button>
                     </li>
-
                     <li className='nav-elem'>
-                        <button className='nav-btn signup-btn'>
+                        <button
+                            className='nav-btn signup-btn'
+                            hidden={isLoggedIn}
+                        >
                             <Link
                                 to='/sign-up'
                                 className='nav-link signup-btn'

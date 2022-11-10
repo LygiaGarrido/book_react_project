@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Highlight_book = styled.div`
@@ -29,6 +30,7 @@ const Book_cover = styled.div`
 `;
 
 function BookSlider(props) {
+    const navigate = useNavigate();
     let currentBook = 0;
 
     useEffect(() => {
@@ -39,8 +41,7 @@ function BookSlider(props) {
     }, [currentBook]);
 
     function handleClick() {
-        //TODO (insert link to bookpage)
-        console.log(props.bookID);
+        navigate(`/book/${props.bookID}`);
     }
 
     return (
