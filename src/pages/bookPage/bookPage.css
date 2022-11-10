@@ -1,90 +1,90 @@
-#bookCover{
+#bookCover {
     grid-area: bookCover;
     padding: 20px;
-    
 }
 
-#CoverOfBook{
+#CoverOfBook {
     width: 270px;
     height: 400px;
 }
 
-#bookDetails{
+#bookDetails {
     grid-area: details;
     display: flex;
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
     padding: 50px;
     text-align: start;
     font-size: 30px;
 }
 
-.editBt{
-    color: white;
+.editBt {
     grid-area: edit;
     width: 100px;
     height: 35px;
     margin-bottom: 50px;
-    background-color:#76323f;
+    background-color: #76323f;
+    color: #d7cec7;
     border-radius: 9px;
     font-size: 18px;
     box-shadow: 1px 1px 3px #d7cec7;
-    
 }
 
-.editBt2{
-    color: white;
+.editBt2 {
     grid-area: edit;
     width: 100px;
     height: 25px;
     margin-bottom: 5px;
-    background-color:#76323f;
+    background-color: #76323f;
+    color: #d7cec7;
     border-radius: 9px;
     font-size: 10px;
     box-shadow: 1px 1px 3px #d7cec7;
-    
 }
 
-
-.bookInfo{
+.bookInfo {
     display: grid;
     border: 1px solid lightgray;
     width: 900px;
     height: 500px;
     margin-left: 50%;
-    box-shadow: 0px 3px 3px 1px  lightgray;
-    grid-template-areas:"bookCover details"
-                        "bookCover details"
-                        "edit      details";
-    grid-template-columns: 1fr 1fr;                    
+    box-shadow: 0px 3px 3px 1px lightgray;
+    border-radius: 9px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    color: #343434;
+    grid-template-areas:
+        'bookCover details'
+        'bookCover details'
+        'edit      details';
+    grid-template-columns: 1fr 1fr;
     text-align: center;
 }
 
-.editBook{
+.editBook {
     display: grid;
-    grid-template-areas: "bookC updateForm"
-                         "bookC updateButtons";
+    grid-template-areas:
+        'bookC updateForm'
+        'bookC updateButtons';
     text-align: center;
+
     margin-top: 100px;
     margin-left: 50%;
-    
 }
 
-
-
-.editButtons{
+.editButtons {
     display: flex;
     grid-area: updateButtons;
+
     margin-bottom: 150px;
     flex-direction: column;
-    
 }
 
-#updateForm{
-grid-area: updateForm;
+#updateForm {
+    grid-area: updateForm;
 }
 
-#bookC{
+#bookC {
     grid-area: bookC;
     width: 200px;
     height: 300px;

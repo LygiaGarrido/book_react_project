@@ -15,9 +15,10 @@ function BookPage() {
     const [book, setBook] = useState([]);
     const [show, setShow] = useState(false);
 
-    if (user === null) {
-        navigate('/login');
-        return;
+    let isLoggedIn = false;
+
+    if (user !== null) {
+        isLoggedIn = true;
     }
 
     useEffect(() => {
@@ -64,7 +65,10 @@ function BookPage() {
                 {show === false && (
                     <div className='bookInfo'>
                         <div className='bookCover'>
-                            <img id="CoverOfBook" src={book.book_cover}></img>
+                            <img
+                                id='CoverOfBook'
+                                src={book.book_cover}
+                            ></img>
                         </div>
                         <div id='bookDetails'>
                             <p>
@@ -78,14 +82,23 @@ function BookPage() {
                             </p>
                         </div>
                         <div id='editButton'>
-                            <button className="editBt" onClick={handleClick}>Edit</button>
+                            <button
+                                className='editBt'
+                                onClick={handleClick}
+                                hidden={!isLoggedIn}
+                            >
+                                Edit
+                            </button>
                         </div>
                     </div>
                 )}
 
                 {show && (
                     <div className='editBook'>
-                      <img id="bookC" src={book.book_cover}></img>
+                        <img
+                            id='bookC'
+                            src={book.book_cover}
+                        ></img>
                         <div id='updateForm'>
                             <form onSubmit={handleSubmit}>
                                 <label>Title</label>
@@ -125,17 +138,29 @@ function BookPage() {
                                 />
                                 <br />
                                 <br />
-                                <button className="editBt2" type='submit'> Update book </button>
+                                <button
+                                    className='editBt2'
+                                    type='submit'
+                                >
+                                    {' '}
+                                    Update book{' '}
+                                </button>
                             </form>
                         </div>
                         <div className='editButtons'>
                             <div id='discardButton'>
-                                <button className="editBt2" onClick={handleClick}>
+                                <button
+                                    className='editBt2'
+                                    onClick={handleClick}
+                                >
                                     Discard changes
                                 </button>
                             </div>
                             <div id='deleteButton'>
-                                <button className="editBt2" onClick={handleDelete}>
+                                <button
+                                    className='editBt2'
+                                    onClick={handleDelete}
+                                >
                                     Delete book
                                 </button>
                             </div>
