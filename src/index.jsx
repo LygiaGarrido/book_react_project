@@ -8,6 +8,7 @@ import { HomePage } from './pages/HomePage';
 import { Profile } from './pages/profile';
 import { UserContext } from './contexts/UserContext';
 import { MyBooks } from './pages/MyBooks';
+import { PostBookPage } from './pages/postBookPage/PostBookPage';
 
 const domContainer = document.getElementById('app');
 const root = createRoot(domContainer);
@@ -50,6 +51,10 @@ function App() {
                             path={':id'}
                             element={<BookPage />}
                         />
+                    </Route>
+                    <Route
+                    path="new_book"
+                    element={<PostBookPage />}>
                     </Route>
                 
                 </Routes>
