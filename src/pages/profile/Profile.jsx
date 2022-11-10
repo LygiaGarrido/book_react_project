@@ -20,7 +20,6 @@ function ProfilePage() {
     return (
         <>
             <Header />
-            <Link to='/mybooks'> Mybooks</Link>
             <UpperPage />
             <EditProfile />
             <Footer />

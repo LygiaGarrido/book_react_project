@@ -15,9 +15,10 @@ function BookPage() {
     const [book, setBook] = useState([]);
     const [show, setShow] = useState(false);
 
-    if (user === null) {
-        navigate('/login');
-        return;
+    let isLoggedIn = false;
+
+    if (user !== null) {
+        isLoggedIn = true;
     }
 
     useEffect(() => {
@@ -84,6 +85,7 @@ function BookPage() {
                             <button
                                 className='editBt'
                                 onClick={handleClick}
+                                hidden={!isLoggedIn}
                             >
                                 Edit
                             </button>
