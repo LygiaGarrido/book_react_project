@@ -11,7 +11,7 @@ function Profile() {
     const { id } = useParams();
 
     if (user === null || +id !== +user.id) {
-        return <h1>{`Please do the login`}</h1>;
+        return <h1 className='login-redirect'>{`Please do the login`}</h1>;
     }
 
     return ProfilePage();
@@ -50,7 +50,7 @@ function EditProfile(props) {
 
     return (
         <>
-            <div className='button'>
+            <div className='edit-profile-container'>
                 <button
                     className='edit-profile-btn'
                     onClick={showOrHide}
@@ -110,7 +110,7 @@ function EditProfile(props) {
                 </div>
                 <div className='editButton'>
                     <button
-                        className='edit-profile-btn'
+                        className='save-profile-btn'
                         onClick={addItem}
                     >
                         Save
